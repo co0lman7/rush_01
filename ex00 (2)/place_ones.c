@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   place_ones.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arlind.hajdari <arlind.hajdari@student.    +#+  +:+       +#+        */
+/*   By: arlindhajdari <arlindhajdari@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 22:38:40 by arlind.hajd       #+#    #+#             */
-/*   Updated: 2025/08/02 23:03:14 by arlind.hajd      ###   ########.fr       */
+/*   Updated: 2025/08/03 13:23:48 by arlindhajda      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	place_ones_up(int **board, int *sights)
 		if (sights[col] == 1)
 		{
 			if (board[0][col] != 0 && board[0][col] != 4)
-				return (1);
+				return (1); // invalid placement
 			board[0][col] = 4;
 		}
 		col++;

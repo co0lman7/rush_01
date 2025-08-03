@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   control_row_col.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arlind.hajdari <arlind.hajdari@student.    +#+  +:+       +#+        */
+/*   By: arlindhajdari <arlindhajdari@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 16:15:22 by arlind.hajd       #+#    #+#             */
-/*   Updated: 2025/08/02 17:22:39 by arlind.hajd      ###   ########.fr       */
+/*   Updated: 2025/08/03 13:11:36 by arlindhajda      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	check_row_unique(int **board)
 			{
 				if (board[j][i] == board[k][i] && board[j][i] != 0)
 				{
-					return (1);
+					return (1); // found duplicate
 				}
 				k++;
 			}
@@ -37,7 +37,7 @@ int	check_row_unique(int **board)
 		}
 		i++;
 	}
-	return (0);
+	return (0); //not found duplicate, row ok
 }
 
 int	check_col_unique(int **board)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arlind.hajdari <arlind.hajdari@student.    +#+  +:+       +#+        */
+/*   By: arlindhajdari <arlindhajdari@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 14:42:59 by kostin.floq       #+#    #+#             */
-/*   Updated: 2025/08/02 16:14:27 by arlind.hajd      ###   ########.fr       */
+/*   Updated: 2025/08/03 13:53:38 by arlindhajda      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	show_board(int **board)
 	}
 }
 
-int	main(int argc, char *argv[])
+int	main(int argc, char *argv[]) // argc = 2, len(argv) - [program_name = 0, args > 0]
 {
 	int	*sights;
 	int	**board;
@@ -101,7 +101,7 @@ int	main(int argc, char *argv[])
 	board = malloc(sizeof(int *) * 4);
 	if (argc != 2)
 	{
-		write(2, "Error\n", 6);
+		write(2, "Error\n", 6); // either no args passed, or too many passed
 		return (0);
 	}
 	check_input(sights, argv[1]);
@@ -122,6 +122,6 @@ int	main(int argc, char *argv[])
 
 /*
 0-3 - Up, 4-7 - Down, 8-11 - Left, 12-15 - Right
-cc -Wall -Wextra -Werror -o rush-01 *.c
+cc -Wall -Wextra -Werror -o rush-01 *.c, takes all files that end with .c
 ./rush-01 "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2" | cat -e
 */
