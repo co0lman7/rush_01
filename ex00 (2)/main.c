@@ -6,13 +6,13 @@
 /*   By: arlindhajdari <arlindhajdari@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/02 14:42:59 by kostin.floq       #+#    #+#             */
-/*   Updated: 2025/08/03 13:53:38 by arlindhajda      ###   ########.fr       */
+/*   Updated: 2025/08/03 14:22:18 by arlindhajda      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	check_input(int *arr, char *str)
+int	check_input(int *arr, char *str)
 {
 	int	i;
 	int	j;
@@ -26,18 +26,19 @@ void	check_input(int *arr, char *str)
 		{
 			arr = NULL;
 			free(arr);
-			break ;
+			return (1);
 		}
 		arr[j++] = str[i++] - '0';
 		if (str[i] != ' ' && str[i] != '\0')
 		{
 			arr = NULL;
 			free(arr);
-			break ;
+			return (1);
 		}
 		if (str[i] != '\0')
 			i++;
 	}
+	return (0);
 }
 
 void	populate(int **board)
@@ -104,8 +105,7 @@ int	main(int argc, char *argv[]) // argc = 2, len(argv) - [program_name = 0, arg
 		write(2, "Error\n", 6); // either no args passed, or too many passed
 		return (0);
 	}
-	check_input(sights, argv[1]);
-	if (sights == NULL)
+	if (check_input(sights, argv[1]))
 		write(2, "Error\n", 6);
 	else
 	{
